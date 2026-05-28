@@ -65,13 +65,13 @@ def main():
                 # Handle Control Change (CC)
                 elif msg.type == 'control_change':
                     # CC 1 (Modulation Wheel) -> PWM Width (0 to 255)
-                    if msg.control == 1:
+                    if msg.control == 14:
                         pwm_width = min(255, msg.value * 2)
                         synth.set_pwm_width(pwm_width)
                         print(f"CC 1 (Modulation) -> PWM Width = {pwm_width}")
 
                     # CC 2 -> Waveform Select (0 to 5, capped at 5)
-                    elif msg.control == 2:
+                    elif msg.control == 15:
                         # Map 0-127 onto 6 distinct states (0, 1, 2, 3, 4, 5)
                         wave_sel = min(5, msg.value // 22)
                         synth.set_wave_select(wave_sel)

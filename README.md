@@ -78,6 +78,11 @@ source .venv/bin/activate
 # .venv\Scripts\activate
 ```
 
+Might be good to upgrade setuptools and wheel:
+```bash
+pip install --upgrade pip setuptools wheel
+```
+
 ### 2. Install Dependencies
 Ensure your virtual environment is active, then install the required packages:
 ```bash
