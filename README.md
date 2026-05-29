@@ -43,7 +43,7 @@ When a **Note ON** event (Note $d$) is received:
 * **Note OFF** (or velocity = 0): Sets Volume (`0x05`) directly to zero (`0x00`) as a Gate OFF.
 
 ### 3. Control Change (CC) $\rightarrow$ Synth Parameters
-* **PWM Width (`0x04`)**: Modulated by **MIDI CC 1** (Modulation Wheel). Scales input value `0-127` to 8-bit range `0-255`.
+* **PWM Width (`0x04`)**: Modulated by **MIDI CC 1**. Scales input value `0-127` to 8-bit range `0-255`.
 * **Waveform Select (`0x03`)**: Modulated by **MIDI CC 2**. Maps input range `0-127` onto states `0` to `5`, capping at **`5`** (the synthesizer's first silence value defined in `Mux.scala` for safety).
 
 ---
